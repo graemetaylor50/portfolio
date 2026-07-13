@@ -1,69 +1,87 @@
 "use client";
+
 import Link from "next/link";
-import HeroCodingWindow from "./components/HeroCodingWindow/HeroCodingWindow";
 import "./Hero.css";
+
+import HeroCodingWindow from "./components/HeroCodingWindow/HeroCodingWindow";
+import Stats from "./components/Stats/Stats";
 
 export default function Hero() {
   return (
-    <section id="home" className="hero">
-      <div className="container hero-content">
+    <>
+      <section id="home" className="hero">
+        <div className="container">
 
-        <span className="hero-badge">
-          Senior Software Engineer (Frontend)
-        </span>
+          <div className="hero-inner">
 
-        <h1>
-          Building scalable
-          <br />
-          React applications
-          <br />
-          that solve <span>real</span>
-          <br />
-          business problems.
-        </h1>
+            {/* LEFT */}
 
-        <p>
-          Over 15 years of commercial software engineering experience
-          delivering enterprise software, leading frontend initiatives,
-          and collaborating with product teams to build high-quality
-          user experiences.
-        </p>
+            <div className="hero-left">
 
-        <div className="hero-buttons">
+              <span className="hero-badge">
+                Senior Software Engineer (Frontend)
+              </span>
 
-          <Link
-            href="/projects"
-            className="primary-btn"
-          >
-            View My Work →
-          </Link>
+              <h1>
+                Building scalable
+                <br />
+                React applications
+                <br />
+                that solve <span>real</span>
+                <br />
+                business problems.
+              </h1>
 
-          <Link
-            href="cv\Graeme_Taylor_CV.pdf"
-            download
-            className="primary-btn"
-          >
-            Download CV
-          </Link>
+              <p>
+                Over 15 years of commercial software engineering experience
+                delivering enterprise software, leading frontend initiatives,
+                and collaborating with product teams to build high-quality user
+                experiences.
+              </p>
 
-          <Link
-            href="/contact"
-            className="secondary-btn"
-          >
-            Contact Me
-          </Link>
+              <div className="hero-buttons">
+
+                <Link
+                  href="/projects"
+                  className="primary-btn"
+                >
+                  View My Work →
+                </Link>
+
+                <Link
+                  href="/cv/Graeme_Taylor_CV.pdf"
+                  download
+                  className="secondary-btn"
+                >
+                  Download CV
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="secondary-btn"
+                >
+                  Contact Me
+                </Link>
+
+              </div>
+
+            </div>
+
+            {/* RIGHT */}
+
+            <div className="hero-right">
+              <div className="code-window-wrapper">
+                <div className="code-glow" />
+                <HeroCodingWindow />
+              </div>  
+            </div>
+
+          </div>
 
         </div>
+      </section>
 
-      </div>
-
-    <div className="code-window-wrapper">
-      <div className="code-glow" />
-        <HeroCodingWindow />
-    </div>
-
-    </section>
+      <Stats />
+    </>
   );
 }
-
-
