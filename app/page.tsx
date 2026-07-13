@@ -1,11 +1,15 @@
+
 import Hero from "./components/Hero/Hero";
-import "./globals.css";
+import About from "./components/About/About";
 
 export default function Home() {
   return (
-    <div >
-      <Hero />
-    </div>
+    <>
+      <div >
+        <Hero />
+        <About />
+      </div>
+    </>
   );
 }
 

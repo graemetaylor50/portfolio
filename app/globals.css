@@ -53,11 +53,10 @@ img {
   max-width: 100%;
 }
 
-section {
-  padding: 7rem 0;
-}
-
 .container {
   width: min(1200px, calc(100% - 48px));
   margin-inline: auto;
+}
+html {
+    scroll-behavior: smooth;
 }
