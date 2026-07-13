@@ -54,8 +54,8 @@ img {
 }
 
 .container {
-  width: min(1200px, calc(100% - 48px));
-  margin-inline: auto;
+    width: min(1800px, calc(100% - 48px));
+    margin-inline: auto;
 }
 html {
     scroll-behavior: smooth;
