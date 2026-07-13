@@ -1,0 +1,315 @@
+/* ========================================= */
+/* CODE WINDOW */
+/* ========================================= */
+
+.code-window {
+    width: 100%;
+    max-width: 560px;
+    background: #0b1120;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+/* ========================================= */
+/* HEADER */
+/* ========================================= */
+
+.code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 56px;
+
+    padding: 0 18px;
+
+    background: #111827;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.window-title {
+    color: #94a3b8;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+/* ========================================= */
+/* TRAFFIC LIGHTS */
+/* ========================================= */
+
+.traffic-lights {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.traffic-lights span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f57;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #28c840;
+}
+
+/* ========================================= */
+/* COPY BUTTON */
+/* ========================================= */
+
+.copy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #64748b;
+
+    border-radius: 8px;
+
+    transition: .25s ease;
+
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background: rgba(255,255,255,.05);
+    color: white;
+}
+
+/* ========================================= */
+/* BODY */
+/* ========================================= */
+
+.code-body {
+    position: relative;
+
+    padding: 24px 0;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: .92rem;
+
+    line-height: 2;
+
+    background: #0b1120;
+}
+
+/* Vertical guide */
+
+.code-body::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 58px;
+
+    width: 1px;
+
+    background: rgba(255,255,255,.06);
+
+}
+
+/* ========================================= */
+/* LINE */
+/* ========================================= */
+
+.code-line {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 34px;
+
+    transition: background .2s ease;
+
+}
+
+.code-line:hover {
+
+    background: rgba(255,255,255,.03);
+
+}
+
+/* ========================================= */
+/* LINE NUMBERS */
+/* ========================================= */
+
+.line-number {
+
+    width: 58px;
+
+    padding-right: 18px;
+
+    text-align: right;
+
+    color: #475569;
+
+    user-select: none;
+
+    flex-shrink: 0;
+
+    font-size: .82rem;
+
+}
+
+/* ========================================= */
+/* CODE CONTENT */
+/* ========================================= */
+
+.line-content {
+
+    flex: 1;
+
+    padding-left: 22px;
+
+    white-space: pre;
+
+    color: #e2e8f0;
+
+}
+
+/* ========================================= */
+/* INDENTS */
+/* ========================================= */
+
+.indent {
+
+    display: inline-block;
+
+    width: 24px;
+
+}
+
+.indent-double {
+
+    display: inline-block;
+
+    width: 48px;
+
+}
+
+/* ========================================= */
+/* SYNTAX */
+/* ========================================= */
+
+.keyword {
+    color: #c792ea;
+}
+
+.variable {
+    color: #82aaff;
+}
+
+.operator {
+    color: #89ddff;
+}
+
+.string {
+    color: #c3e88d;
+}
+
+.number {
+    color: #f78c6c;
+}
+
+.tag {
+    color: #f07178;
+}
+
+.attribute {
+    color: #ffcb6b;
+}
+
+.punctuation {
+    color: #d6deeb;
+}
+
+.comment {
+    color: #637777;
+    font-style: italic;
+}
+
+/* ========================================= */
+/* SCROLLBAR */
+/* ========================================= */
+
+.code-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.code-body::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,.08);
+    border-radius: 20px;
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+
+@media (max-width: 1024px) {
+
+    .code-window {
+        max-width: 100%;
+        margin-top: 60px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .code-window {
+        border-radius: 16px;
+    }
+
+    .code-body {
+        font-size: .82rem;
+    }
+
+    .line-number {
+        width: 48px;
+        padding-right: 14px;
+    }
+
+    .code-body::before {
+        left: 48px;
+    }
+
+    .line-content {
+        padding-left: 16px;
+    }
+
+}
+
+.property {
+  color: #9cdcfe;
+}
+
+.boolean {
+  color: #569cd6;
+}

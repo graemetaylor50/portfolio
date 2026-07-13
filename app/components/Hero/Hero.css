@@ -1,0 +1,151 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero p {
+  margin-top: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 620px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 8px 16px;
+
+  margin-bottom: 2rem;
+
+  border: 1px solid rgba(79, 124, 255, 0.3);
+
+  border-radius: 999px;
+
+  background: rgba(79, 124, 255, 0.08);
+
+  color: var(--primary);
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(10px);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 3rem;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 16px 28px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #4f7cff,
+    #6a5cff
+  );
+
+  color: white;
+
+  font-weight: 600;
+
+  transition: all .3s ease;
+
+  box-shadow:
+      0 8px 24px rgba(79,124,255,.25);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+      0 14px 30px rgba(79,124,255,.35);
+}
+
+.secondary-btn {
+  padding: 16px 32px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,.02);
+
+  transition: .25s;
+}
+
+.secondary-btn:hover {
+  background: rgba(255,255,255,.05);
+}
+
+.code-window-wrapper {
+  position: relative;
+}
+
+.code-glow {
+  position: absolute;
+
+  width: 800px;
+  height: 800px;
+
+  top: 50%;
+  left: 40%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(88, 166, 255, 0.45) 0%,
+    rgba(88, 166, 255, 0.18) 40%,
+    rgba(88, 166, 255, 0.08) 65%,
+    transparent 80%
+  );
+
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.code-window {
+  position: relative;
+  z-index: 1;
+}
