@@ -65,7 +65,7 @@ const Experience = () => {
                         <div className="experience-tags">
 
                           <span>React</span>
-                          <span>TypeScript</span>
+                          <span>JavaScript</span>
                           <span>GraphQL</span>
                           <span>Apollo Client</span>
                           <span>Jest</span>
