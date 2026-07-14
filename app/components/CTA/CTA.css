@@ -1,0 +1,122 @@
+.cta-section {
+    margin-top: 140px;
+    margin-bottom: 0;
+}
+
+.cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 42px 48px;
+
+    border-radius: 24px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb 0%,
+        #6d28d9 100%
+    );
+
+    overflow: hidden;
+}
+
+.cta-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.cta-icon {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: rgba(255,255,255,.12);
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    backdrop-filter: blur(8px);
+
+    flex-shrink: 0;
+}
+
+.cta-text h2 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.cta-text p {
+    margin-top: 10px;
+
+    color: rgba(255,255,255,.85);
+
+    font-size: 1rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 18px 32px;
+
+    background: white;
+
+    color: #111827;
+
+    text-decoration: none;
+
+    border-radius: 14px;
+
+    font-weight: 600;
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 14px 30px rgba(0,0,0,.18);
+}
+
+.cta-button svg {
+    transition: transform .25s;
+}
+
+.cta-button:hover svg {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+
+    .cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        padding: 32px;
+    }
+
+    .cta-left {
+        align-items: flex-start;
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
