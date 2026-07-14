@@ -1,5 +1,6 @@
 import "./CTA.css";
 import { SendHorizontal, ArrowRight } from "lucide-react";
+import Footer from "../Footer/Footer";
 
 const CTA = () => {
     return (
@@ -31,6 +32,8 @@ const CTA = () => {
 
                 </div>
             </div>
+
+            <Footer />
         </section>
     );
 };

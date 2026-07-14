@@ -14,27 +14,40 @@ const navLinks = [
 export default function Header() {
   const [activeSection, setActiveSection] = useState("home");
 useEffect(() => {
-  const sections = document.querySelectorAll("section[id]");
+  const handleScroll = () => {
+    const sections = document.querySelectorAll<HTMLElement>("section[id]");
 
-  console.log("Sections:", sections);
+    const HEADER_OFFSET = 100;
 
-  const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setActiveSection(entry.target.id);
+    let current = "home";
+
+    sections.forEach((section) => {
+      const top = section.offsetTop - HEADER_OFFSET;
+
+      if (window.scrollY >= top) {
+        current = section.id;
       }
     });
-  },
-  {
-    rootMargin: "-25% 0px -50% 0px",
-    threshold: 0.1,
-  }
-);
 
-  sections.forEach((section) => observer.observe(section));
+   
+    if (
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 50
+    ) {
+      current = "contact";
+    }
 
-  return () => observer.disconnect();
+    setActiveSection(current);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+ 
+  handleScroll();
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
 }, []);
 
   return (
