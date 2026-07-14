@@ -1,19 +1,23 @@
 .hero {
     padding: 5rem 0 4rem;
     position: relative;
+
+    overflow-x: clip;
 }
 
 .hero-inner {
     display: grid;
-    grid-template-columns: 1fr 560px;
-    gap: 64px;
+    grid-template-columns: minmax(0, 1fr) 620px;
+    gap: 40px;
     align-items: center;
 }
 
 .hero-right {
-    display: flex;
+     display: flex;
     justify-content: flex-end;
+    width: 100%;
 }
+
 .hero-left {
     min-width: 0;
 }
@@ -23,14 +27,12 @@
     align-items: center;
 
     padding: 8px 18px;
-
-    margin-bottom: 2rem;
+    
 
     border-radius: 999px;
 
-    border: 1px solid rgba(79,124,255,.3);
-
-    background: rgba(79,124,255,.08);
+    border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
 
     color: var(--primary);
 
@@ -39,18 +41,20 @@
 
     letter-spacing: .08em;
     text-transform: uppercase;
+
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 2rem;
 }
 
 .hero h1 {
     font-size: clamp(3.5rem, 7vw, 5.5rem);
-
     line-height: 1.05;
-
     font-weight: 800;
-
     letter-spacing: -2px;
-
     margin-bottom: 2rem;
+
+    color: var(--text);
 }
 
 .hero h1 span {
@@ -59,14 +63,10 @@
 
 .hero p {
     font-size: 1.15rem;
-
     line-height: 1.8;
-
     color: var(--text-secondary);
-
     margin-bottom: 3rem;
 }
-
 
 .hero-buttons {
     display: flex;
@@ -92,31 +92,30 @@
 .primary-btn {
     background: linear-gradient(
         135deg,
-        var(--primary),
-        #6a5cff
+        var(--gradient-start),
+        var(--gradient-end)
     );
 
     color: white;
 
-    box-shadow:
-        0 10px 25px rgba(79,124,255,.25);
+    box-shadow: var(--shadow);
 }
 
 .primary-btn:hover {
     transform: translateY(-3px);
-
-    box-shadow:
-        0 16px 35px rgba(79,124,255,.35);
+    box-shadow: var(--shadow);
 }
 
 .secondary-btn {
     border: 1px solid var(--border);
 
-    background: rgba(255,255,255,.02);
+    background: var(--surface);
+
+    color: var(--text);
 }
 
 .secondary-btn:hover {
-    background: rgba(255,255,255,.05);
+    background: var(--surface-light);
 
     transform: translateY(-3px);
 }
@@ -128,10 +127,8 @@
 
 .code-window-wrapper {
     position: relative;
+    width: 80%;
 }
-/* =========================================
-   GLOW
-========================================= */
 
 .code-glow {
     position: absolute;
@@ -160,14 +157,10 @@
     pointer-events: none;
 }
 
-/* =========================================
-   TABLET
-========================================= */
-
 @media (max-width: 1100px) {
 
     .hero-inner {
-          grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
         text-align: center;
         gap: 60px;
     }
@@ -186,10 +179,6 @@
     }
 
 }
-
-/* =========================================
-   MOBILE
-========================================= */
 
 @media (max-width: 768px) {
 
@@ -219,4 +208,7 @@
         height: 450px;
     }
 
+    .hero-right {
+    display: none;
+    }
 }

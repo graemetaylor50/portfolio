@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import "./Header.css";
+import { Sun, Moon } from "lucide-react";
 
 const navLinks = [
   { id: "home", label: "Home", href: "#home" },
@@ -13,47 +14,67 @@ const navLinks = [
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("home");
-useEffect(() => {
-  const handleScroll = () => {
-    const sections = document.querySelectorAll<HTMLElement>("section[id]");
+  const [darkMode, setDarkMode] = useState(true);
 
-    const HEADER_OFFSET = 100;
+  // Load saved theme
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
 
-    let current = "home";
-
-    sections.forEach((section) => {
-      const top = section.offsetTop - HEADER_OFFSET;
-
-      if (window.scrollY >= top) {
-        current = section.id;
-      }
-    });
-
-   
-    if (
-      window.innerHeight + window.scrollY >=
-      document.documentElement.scrollHeight - 50
-    ) {
-      current = "contact";
+    if (savedTheme) {
+      setDarkMode(savedTheme === "dark");
     }
+  }, []);
 
-    setActiveSection(current);
-  };
+  // Apply theme
+  useEffect(() => {
+    document.documentElement.classList.toggle("light", !darkMode);
 
-  window.addEventListener("scroll", handleScroll);
+    localStorage.setItem(
+      "theme",
+      darkMode ? "dark" : "light"
+    );
+  }, [darkMode]);
 
- 
-  handleScroll();
+  // Active navigation
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections =
+        document.querySelectorAll<HTMLElement>("section[id]");
 
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []);
+      const HEADER_OFFSET = 100;
+
+      let current = "home";
+
+      sections.forEach((section) => {
+        const top = section.offsetTop - HEADER_OFFSET;
+
+        if (window.scrollY >= top) {
+          current = section.id;
+        }
+      });
+
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 50
+      ) {
+        current = "contact";
+      }
+
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () =>
+      window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="header">
       <div className="header__container">
-        {/* Logo */}
+
         <Link href="/" className="header__logo">
           <div className="logo-mark">
             <span className="logo-g">G</span>
@@ -65,7 +86,6 @@ useEffect(() => {
           </span>
         </Link>
 
-        {/* Navigation */}
         <nav className="header__nav">
           {navLinks.map((link) => (
             <a
@@ -80,13 +100,14 @@ useEffect(() => {
           ))}
         </nav>
 
-        {/* Theme Toggle (placeholder) */}
         <button
           className="header__theme-button"
           aria-label="Toggle theme"
+          onClick={() => setDarkMode(!darkMode)}
         >
-          ☀
+          {darkMode ? <Sun size={18} /> : <Moon size={18} />}
         </button>
+
       </div>
     </header>
   );

@@ -10,7 +10,19 @@ const highlights = [
     {
         title: "Performance Optimisation",
         text: "Reduced unnecessary renders and improved application responsiveness."
-    }
+    },
+     {
+        title: "Mentoring & Leadership",
+        text: "Mentored engineers through code reviews, testing strategies and React best practices."
+    },
+     {
+        title: "Cross-Functional Collaboration",
+        text: "Partnered with Product Managers, UX Designers and backend engineers to deliver customer-focused solutions."
+    },
+      {
+        title: "Engineering Excellence",
+        text: "Championed coding standards, code reviews and automated testing to improve software quality."
+    },
 ];
 
 const Highlights = () => {
@@ -35,10 +47,6 @@ const Highlights = () => {
 
                 </div>
             ))}
-
-            <a href="#experience" className="view-more">
-                View experience →
-            </a>
 
         </div>
     );

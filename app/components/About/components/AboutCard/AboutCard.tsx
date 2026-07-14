@@ -15,20 +15,24 @@ export default function AboutCard() {
             </h2>
 
             <p>
-                I'm a Senior Frontend Engineer with over nine years of
-                experience building large-scale React applications.
+                I'm a Senior Software Engineer with over 15 years of experience in software development, 
+                including more than nine years building enterprise React applications. Throughout my career 
+                I've worked across frontend engineering, quality assurance and automation, giving me a well-rounded 
+                understanding of the entire software development lifecycle.
             </p>
 
             <p>
-                I enjoy solving complex problems with simple,
-                maintainable solutions while creating products that
-                users genuinely enjoy using.
+               I enjoy building clean, maintainable user interfaces that solve real problems. Whether 
+               I'm developing reusable React components, integrating GraphQL APIs, improving application 
+               performance or collaborating with designers and product managers, my focus is always on 
+               delivering software that's intuitive, scalable and easy to maintain.
             </p>
-
-            <button className="about-btn">
-                More about me →
-            </button>
-
+             <p>
+              Having started my career in quality assurance, I developed a strong appreciation for testing, 
+              reliability and attention to detail. That foundation continues to influence how I approach frontend 
+              development today—from writing automated tests and reviewing code to mentoring other engineers and 
+              promoting engineering best practices.
+            </p>
         </div>
     );
 };

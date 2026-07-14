@@ -1,7 +1,5 @@
 .cta-section {
-
     margin-top: 40px;
-    
 }
 
 .cta {
@@ -13,12 +11,18 @@
 
     border-radius: 24px;
     margin-bottom: 40px;
+
     background: linear-gradient(
         90deg,
-        #2563eb 0%,
-        #6d28d9 100%
+        var(--gradient-start) 0%,
+        var(--gradient-end) 100%
     );
+
     overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition: box-shadow .3s ease;
 }
 
 .cta-left {
@@ -63,6 +67,8 @@
     color: rgba(255,255,255,.85);
 
     font-size: 1rem;
+
+    line-height: 1.7;
 }
 
 .cta-button {
@@ -72,29 +78,35 @@
 
     padding: 18px 32px;
 
-    background: white;
+    background: var(--surface);
 
-    color: #111827;
+    color: var(--text);
 
     text-decoration: none;
+
+    border: 1px solid var(--border);
 
     border-radius: 14px;
 
     font-weight: 600;
 
     transition:
-        transform .25s,
-        box-shadow .25s;
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
 
-    box-shadow: 0 14px 30px rgba(0,0,0,.18);
+    background: var(--surface-light);
+
+    box-shadow: var(--shadow);
 }
 
 .cta-button svg {
-    transition: transform .25s;
+    transition: transform .25s ease;
 }
 
 .cta-button:hover svg {
@@ -105,8 +117,11 @@
 
     .cta {
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 32px;
+
         padding: 32px;
     }
 
@@ -116,6 +131,7 @@
 
     .cta-button {
         width: 100%;
+
         justify-content: center;
     }
 

@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050C19;
+  
+  --background: #050c19;
   --surface: #111827;
   --surface-light: #1f2937;
 
@@ -11,13 +12,31 @@
   --text: #f8fafc;
   --text-secondary: #94a3b8;
 
-  --border: rgba(255,255,255,.08);
+  --border: rgba(255, 255, 255, 0.08);
 
   --gradient-start: #4f7cff;
   --gradient-end: #7c5cff;
 
-  --shadow:
-    0 10px 30px rgba(0,0,0,.35);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+html.light {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-light: #f1f5f9;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --text: #0f172a;
+  --text-secondary: #64748b;
+
+  --border: rgba(15, 23, 42, 0.08);
+
+  --gradient-start: #2563eb;
+  --gradient-end: #7c3aed;
+
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 * {
@@ -33,10 +52,10 @@ html {
 body {
   background: var(--background);
   color: var(--text);
-  font-family:
-    Inter,
-    system-ui,
-    sans-serif;
+  font-family: Inter, system-ui, sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 a {
@@ -46,6 +65,7 @@ a {
 
 button {
   cursor: pointer;
+  font: inherit;
 }
 
 img {
@@ -54,9 +74,6 @@ img {
 }
 
 .container {
-    width: min(1800px, calc(100% - 48px));
-    margin-inline: auto;
-}
-html {
-    scroll-behavior: smooth;
+  width: min(1800px, calc(100% - 48px));
+  margin-inline: auto;
 }

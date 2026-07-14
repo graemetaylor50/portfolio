@@ -11,7 +11,7 @@
 .section-tag {
     display: inline-block;
 
-    color: #3b82f6;
+    color: var(--primary);
 
     font-weight: 600;
 
@@ -22,10 +22,12 @@
     font-size: 3rem;
 
     margin-bottom: 24px;
+
+    color: var(--text);
 }
 
 .section-heading p {
-    color: #94a3b8;
+    color: var(--text-secondary);
 
     line-height: 1.8;
 }
@@ -41,27 +43,41 @@
 }
 
 .experience-stat {
-    background: #111827;
+    background: var(--surface);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid var(--border);
 
     border-radius: 18px;
 
     padding: 28px;
 
     text-align: center;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.experience-stat:hover {
+    transform: translateY(-4px);
+
+    background: var(--surface-light);
+
+    box-shadow: var(--shadow);
 }
 
 .experience-stat h3 {
     font-size: 2rem;
 
-    color: #60a5fa;
+    color: var(--primary);
 
     margin-bottom: 8px;
 }
 
 .experience-stat span {
-    color: #94a3b8;
+    color: var(--text-secondary);
 }
 
 .experience-list {
@@ -73,21 +89,29 @@
 }
 
 .experience-card {
-    background: #111827;
+    background: var(--surface);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid var(--border);
 
     border-radius: 24px;
 
     padding: 40px;
 
-    transition: .3s;
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
 }
 
 .experience-card:hover {
     transform: translateY(-6px);
 
-    border-color: rgba(96,165,250,.4);
+    background: var(--surface-light);
+
+    border-color: var(--primary);
+
+    box-shadow: var(--shadow);
 }
 
 .experience-header {
@@ -104,16 +128,18 @@
     font-size: 1.8rem;
 
     margin-bottom: 8px;
+
+    color: var(--text);
 }
 
 .experience-header h4 {
-    color: #60a5fa;
+    color: var(--primary);
 
     font-weight: 500;
 }
 
 .experience-date {
-    color: #94a3b8;
+    color: var(--text-secondary);
 }
 
 .experience-tags {
@@ -131,11 +157,13 @@
 
     border-radius: 999px;
 
-    background: rgba(59,130,246,.15);
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
 
-    color: #60a5fa;
+    color: var(--primary);
 
     font-size: .9rem;
+
+    border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
 }
 
 .experience-card ul {
@@ -147,15 +175,19 @@
 
     padding-left: 20px;
 
-    color: #cbd5e1;
+    color: var(--text-secondary);
 
     line-height: 1.8;
+}
+
+.experience-card li::marker {
+    color: var(--primary);
 }
 
 @media (max-width: 900px) {
 
     .experience-stats {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .experience-header {

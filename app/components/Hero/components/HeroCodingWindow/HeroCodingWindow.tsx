@@ -141,7 +141,7 @@ export default function HeroCodeWindow() {
           <span className="green" />
         </div>
 
-        <h3>Frontend Engineer</h3>
+        <span className="window-title">Frontend Engineer.tsx</span>
 
         <button className="copy-button">
           ⧉

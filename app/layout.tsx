@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport  } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "./components/Header/Header";
 
@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Graeme Taylor - Senior Software Engineer (Frontend)",
   description: "Building scalable React applications that solve real business problems. Over 15 years of commercial software engineering experience delivering enterprise software, leading frontend initiatives, and collaborating with product teams to build high-quality user experiences.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

@@ -8,9 +8,9 @@
 
     gap: 1px;
 
-    background: rgba(255,255,255,.06);
+    background: var(--border);
 
-    border: 1px solid rgba(255,255,255,.06);
+    border: 1px solid var(--border);
     border-radius: 24px;
 
     overflow: hidden;
@@ -23,16 +23,20 @@
 
     padding: 2.5rem;
 
-    background: rgba(255,255,255,.02);
+    background: var(--surface);
 
     transition:
         transform .3s ease,
-        background .3s ease;
+        background .3s ease,
+        box-shadow .3s ease;
 }
 
 .stat:hover {
-    background: rgba(79,124,255,.06);
+    background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+
     transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
 }
 
 .stat-icon {
