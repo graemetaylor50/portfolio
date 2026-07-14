@@ -81,25 +81,38 @@
     gap:14px;
 }
 
-.tech-pill{
+.tech-pill {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 
-    background:rgba(255,255,255,.05);
+    padding: 14px 18px;
 
-    border:1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
 
-    border-radius:12px;
-
-    padding:14px 18px;
-
-    color:white;
-
-    transition:.3s;
+    transition: all .25s ease;
+    cursor: default;
 }
 
-.tech-pill:hover{
+.tech-pill:hover {
+    transform: translateY(-3px);
+    border-color: rgba(79,163,255,.35);
+    background: rgba(79,163,255,.08);
+}
 
-    background:#1273ff22;
-    transform:translateY(-2px);
+.tech-icon {
+    width: 22px;
+    height: 22px;
+
+    flex-shrink: 0;
+}
+
+.tech-name {
+    color: #ffffff;
+    font-size: .95rem;
+    font-weight: 500;
 }
 
 .highlight-card{
