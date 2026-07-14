@@ -42,22 +42,15 @@ export default function Hero() {
               <div className="hero-buttons">
 
                 <Link
-                  href="/projects"
-                  className="primary-btn"
-                >
-                  View My Work →
-                </Link>
-
-                <Link
                   href="/cv/Graeme_Taylor_CV.pdf"
                   download
-                  className="secondary-btn"
+                  className="primary-btn"
                 >
                   Download CV
                 </Link>
 
                 <Link
-                  href="/contact"
+                  href="mailto:scoopsy@gmail.com"
                   className="secondary-btn"
                 >
                   Contact Me

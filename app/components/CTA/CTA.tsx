@@ -3,7 +3,7 @@ import { SendHorizontal, ArrowRight } from "lucide-react";
 
 const CTA = () => {
     return (
-        <section className="cta-section">
+        <section className="cta-section" id="contact">
             <div className="container">
                 <div className="cta">
 
