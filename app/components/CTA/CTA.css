@@ -134,5 +134,8 @@
 
         justify-content: center;
     }
+    .cta-icon {
+    display: none;
+}
 
 }
