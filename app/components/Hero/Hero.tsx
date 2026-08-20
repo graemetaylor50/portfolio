@@ -9,7 +9,7 @@ import Stats from "./components/Stats/Stats";
 export default function Hero() {
   return (
     <>
-      <section id="home" className="hero">
+      <section id="home" className="hero"> 
         <div className="container">
 
           <div className="hero-inner">
@@ -70,10 +70,9 @@ export default function Hero() {
             </div>
 
           </div>
-
+         
         </div>
       </section>
-
       <Stats />
     </>
   );
